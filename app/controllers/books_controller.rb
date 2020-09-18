@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
@@ -18,6 +17,12 @@ class BooksController < ApplicationController
    if current_user.id != @book.user_id
       redirect_to books_path
    end
+  end
+
+  def top
+  end
+
+  def about
   end
 
   def update
