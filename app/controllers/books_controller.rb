@@ -19,12 +19,6 @@ class BooksController < ApplicationController
    end
   end
 
-  def top
-  end
-
-  def about
-  end
-
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
@@ -34,6 +28,9 @@ class BooksController < ApplicationController
       flash[:danger] = @book.errors.full_messages
       render 'edit'
     end
+  end
+
+  def about
   end
 
   def index

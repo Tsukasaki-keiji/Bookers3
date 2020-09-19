@@ -1,19 +1,23 @@
-<table class="table">
-    <h1>Book detail</h1>
-
-    <thead>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-          <tr>
-        <th>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+         <%= render'users/userinfo', user: current_user %>
          <%= render 'books/form', book: @book_new %>
-        </th>
-        <th><%= @book.title %></th>
-        <th><%= @book.body %></th>
+    </div>
+    <div class="col-xs-9">
+      <table class="table">
+       <h1>Book detail</h1>
+        <thead>
+          <tr>
+           <th></th>
+          <th></th>
+          <th></th>
+          </tr>
+        </thead>
+        <tr>
+
+           <th><%= link_to @book.title %></th>
+           <th><%= @book.body %></th>
 
 
 
@@ -25,7 +29,6 @@
          <button type="button" class="btn btn-danger"><%= link_to 'Destroy', @book_path, method: :delete, data: { confirm: 'Are you sure?'} %></button>
         </td>
         <% end %>
-
-      </tr>
-
-  </table>
+        </tr>
+    </div>
+  </div>
