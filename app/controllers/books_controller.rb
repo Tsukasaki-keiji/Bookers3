@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
@@ -28,9 +29,6 @@ class BooksController < ApplicationController
       flash[:danger] = @book.errors.full_messages
       render 'edit'
     end
-  end
-
-  def about
   end
 
   def index
